@@ -63,8 +63,8 @@ namespace GreenTubeSF.Hooks
                 case ScenarioBlock.Given:
                     if (_scenarioContext.TestError != null)
                     {
-                        _scenario.CreateNode<Given>(_scenarioContext.StepContext.TestError.Message + "\n" +
-                            _scenarioContext.TestError.StackTrace);
+                        _scenario.CreateNode<Given>(_scenarioContext.StepContext.StepInfo.Text).Fail
+                            (_scenarioContext.TestError.Message + "\n" + _scenarioContext.TestError.StackTrace);
                     }
                     else
                     {
@@ -74,38 +74,35 @@ namespace GreenTubeSF.Hooks
                 case ScenarioBlock.When:
                     if (_scenarioContext.TestError != null)
                     {
-                        _scenario.CreateNode<When>(_scenarioContext.StepContext.TestError.Message + "\n" +
-                            _scenarioContext.TestError.StackTrace);
+                        _scenario.CreateNode<When>(_scenarioContext.StepContext.StepInfo.Text).Fail
+                            (_scenarioContext.TestError.Message + "\n" + _scenarioContext.TestError.StackTrace);
                     }
                     else
                     {
                         _scenario.CreateNode<When>(_scenarioContext.StepContext.StepInfo.Text);
                     }
                     break;
-                    break;
                 case ScenarioBlock.Then:
                     if (_scenarioContext.TestError != null)
                     {
-                        _scenario.CreateNode<Then>(_scenarioContext.StepContext.TestError.Message + "\n" +
-                            _scenarioContext.TestError.StackTrace);
+                        _scenario.CreateNode<Then>(_scenarioContext.StepContext.StepInfo.Text).Fail
+                            (_scenarioContext.TestError.Message + "\n" + _scenarioContext.TestError.StackTrace);
                     }
                     else
                     {
                         _scenario.CreateNode<Then>(_scenarioContext.StepContext.StepInfo.Text);
                     }
                     break;
-                    break;
                 default:
                     if (_scenarioContext.TestError != null)
                     {
-                        _scenario.CreateNode<And>(_scenarioContext.StepContext.TestError.Message + "\n" +
-                            _scenarioContext.TestError.StackTrace);
+                        _scenario.CreateNode<And>(_scenarioContext.StepContext.StepInfo.Text).Fail
+                            (_scenarioContext.TestError.Message + "\n" + _scenarioContext.TestError.StackTrace);
                     }
                     else
                     {
                         _scenario.CreateNode<And>(_scenarioContext.StepContext.StepInfo.Text);
                     }
-                    break;
                     break;
             }
         }

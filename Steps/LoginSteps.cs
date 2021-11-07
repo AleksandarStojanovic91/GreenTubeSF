@@ -35,6 +35,18 @@ namespace GreenTubeSF.Steps
             homePage.ClickLoginHeaderButton();
         }
 
+        [When(@"I click register button")]
+        public void WhenIClickRegisterButton()
+        {
+            homePage.ClickRegisterHeaderButton();
+        }
+
+        [When(@"I change language to '(.*)'")]
+        public void WhenIChangeLanguageTo(string language)
+        {
+            homePage.SelectLanguage(language);
+        }
+
         [When(@"I enter my username")]
         public void WhenIEnterMyUsername()
         {
@@ -52,6 +64,18 @@ namespace GreenTubeSF.Steps
         {
             homePage.ClickSubmitLoginButton();
         }
+
+        [When(@"I enter username '(.*)'")]
+        public void WhenIEnterUsername(string username)
+        {
+            homePage.EnterUsername(username);
+        }
+
+        [When(@"I enter password '(.*)'")]
+        public void WhenIEnterPassword(string password)
+        {
+            homePage.EnterPassword(password);
+        }
         #endregion
 
         #region Then steps
@@ -59,6 +83,72 @@ namespace GreenTubeSF.Steps
         public void ThenIShouldSeeMyProfileUsername()
         {
             loggedInPage.VerifyUsername("AlexBg91");
+        }
+
+        [Then(@"I should see username error message '(.*)'")]
+        public void ThenIShouldSeeUsernameErrorMessage(string usernameErrorMessage)
+        {
+            homePage.VerifyUsernameErrorText(usernameErrorMessage);
+        }
+
+        [Then(@"I should see password error message '(.*)'")]
+        public void ThenIShouldSeePasswordErrorMessage(string passwordErrorMessage)
+        {
+            homePage.VerifyPasswordErrorText(passwordErrorMessage);
+        }
+
+        [Then(@"I should see form error '(.*)'")]
+        public void ThenIShouldSeeFormError(string formErrorMessage)
+        {
+            homePage.VerifyFormErrorText(formErrorMessage);
+        }
+
+        [Then(@"form header title should be '(.*)'")]
+        public void ThenFormHeaderTitleShouldBe(string text)
+        {
+            homePage.VerifyFormHeaderText(text);
+        }
+
+        [Then(@"username label should be '(.*)'")]
+        public void ThenUsernameLabelShouldBe(string text)
+        {
+            homePage.VerifyUsernameLabelText(text);
+        }
+
+        [Then(@"password label should be '(.*)'")]
+        public void ThenPasswordLabelShouldBe(string text)
+        {
+            homePage.VerifyPasswordLabelText(text);
+        }
+
+        [Then(@"auto login text should be '(.*)'")]
+        public void ThenAutoLoginTextShouldBe(string text)
+        {
+            homePage.VerifyAutoLoginLabelText(text);
+        }
+
+        [Then(@"login button text should be '(.*)'")]
+        public void ThenLoginButtonTextShouldBe(string text)
+        {
+            homePage.VerifySubmitLoginButtonText(text);
+        }
+
+        [Then(@"forgot password text should be '(.*)'")]
+        public void ThenForgotPasswordTextShouldBe(string text)
+        {
+            homePage.VerifyForgottenPasswordText(text);
+        }
+
+        [Then(@"dont have account text should be '(.*)'")]
+        public void ThenDontHaveAccountTextShouldBeAsPasEncoreDeCompte(string text)
+        {
+            homePage.VerifyYouDontHaveAnAcountText(text);
+        }
+
+        [Then(@"register now text should be '(.*)'")]
+        public void ThenRegisterNowTextShouldBeInscrireMaintenant(string text)
+        {
+            homePage.VerifyRegisterNowText(text);
         }
         #endregion
 

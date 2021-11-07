@@ -3,7 +3,7 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.PageObjects;
-using System;
+using System.Threading;
 
 namespace GreenTubeSLN.PageObjects
 {
@@ -37,6 +37,7 @@ namespace GreenTubeSLN.PageObjects
         IWebElement AutoLogin { get; set; }
         [FindsBy(How = How.XPath, Using = "//button[contains(@class,'js-confirmLoginModal')]")]
         IWebElement SubmitLogin { get; set; }
+
         [FindsBy(How = How.CssSelector, Using = ".c-btn.c-btn--ghost")]
         IWebElement CancelButton { get; set; }
         [FindsBy(How = How.XPath, Using = "//header[contains(@class,'c-modal__header')]/div/div/div")]
@@ -61,7 +62,7 @@ namespace GreenTubeSLN.PageObjects
         IWebElement ForgotenPasswordLink { get; set; }
         [FindsBy(How = How.CssSelector, Using = ".c-modal__footer span")]
         IWebElement YouDontHaveAnAccountText { get; set; }
-        [FindsBy(How = How.XPath, Using = "//footer//a[@href='https://www.gametwist.com/en/registration/']")]
+        [FindsBy(How = How.XPath, Using = "//footer//a[contains(@href,'gametwist.com') and contains(@href,'registration')]")]
         IWebElement RegisterNowLink { get; set; }
         [FindsBy(How = How.XPath, Using = "//footer[contains(@class,'c-modal__footer')]/div/i")]
         IWebElement EightteenPlusIcon { get; set; }
@@ -72,6 +73,9 @@ namespace GreenTubeSLN.PageObjects
         [FindsBy(How = How.XPath, Using = "//button[contains(@class,'c-btn--primary c-btn--block')]")]
         IWebElement SendButton { get; set; }
         #endregion
+
+        [FindsBy(How = How.CssSelector, Using = ".o-grid__item.o-grid__item--auto.o-box-h__item")]
+        IWebElement LanguageBox { get; set; }
 
         #endregion Elements
 
@@ -108,6 +112,14 @@ namespace GreenTubeSLN.PageObjects
         public void ClickSubmitLoginButton()
         {
             ClickElement(SubmitLogin);
+        }
+
+        public void SelectLanguage(string language)
+        {
+            Thread.Sleep(1000);
+            ClickElement(LanguageBox);
+            Thread.Sleep(1000);
+            ClickElement(driver.FindElement(By.XPath("//span[text()='" + language + "']/../../..")));
         }
         #endregion
 
@@ -147,31 +159,31 @@ namespace GreenTubeSLN.PageObjects
         #region Verifications
         public void VerifyFormHeaderText(string text)
         {
-            Assert.AreSame(text, FormHeaderTitle.Text);
+            AssertEquals(text, FormHeaderTitle);
         }
         public void VerifyUsernameLabelText(string text)
         {
-            Assert.AreSame(text, Username.Text);
+            AssertEquals(text, UsernameLabel);
         }
         public void VerifyPasswordLabelText(string text)
         {
-            Assert.AreSame(text, Password.Text);
+            AssertEquals(text, PasswordLabel);
         }
         public void VerifyAutoLoginLabelText(string text)
         {
-            Assert.AreSame(text, AutoLogin.Text);
+            AssertEquals(text, AutoLoginLabel);
         }
         public void VerifyForgottenPasswordText(string text)
         {
-            Assert.AreSame(text, ForgotenPasswordLink.Text);
+            AssertEquals(text, ForgotenPasswordLink);
         }
         public void VerifyYouDontHaveAnAcountText(string text)
         {
-            Assert.AreSame(text, YouDontHaveAnAccountText.Text);
+            AssertEquals(text, YouDontHaveAnAccountText);
         }
         public void VerifyRegisterNowText(string text)
         {
-            Assert.AreSame(text, RegisterNowLink.Text);
+            AssertEquals(text, RegisterNowLink);
         }
         public void VerifyQuestionIconIsDisplayed()
         {
@@ -183,19 +195,23 @@ namespace GreenTubeSLN.PageObjects
         }
         public void VerifyUsernameErrorText(string text)
         {
-            Assert.AreSame(text, UsernameErrorMessage.Text);
+            AssertEquals(text, UsernameErrorMessage);
         }
         public void VerifyPasswordErrorText(string text)
         {
-            Assert.AreSame(text, PasswordErrorMessage.Text);
+            AssertEquals(text, PasswordErrorMessage);
         }
         public void VerifyFormErrorText(string text)
         {
-            Assert.AreSame(text, WrongUsernameOrPasswordMessage.Text);
+            AssertEquals(text, WrongUsernameOrPasswordMessage);
         }
         public void VerifyEmailErrorText(string text)
         {
-            Assert.AreSame(text, EmailErrorMessage.Text);
+            AssertEquals(text, EmailErrorMessage);
+        }
+        public void VerifySubmitLoginButtonText(string text)
+        {
+            AssertEquals(text, SubmitLogin);
         }
         #endregion
 
