@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GreenTubeSLN.SeleniumCore;
+using OpenQA.Selenium;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,19 +11,19 @@ namespace GreenTubeSF.Steps
     [Binding]
     public sealed class LoginSteps
     {
-        // For additional details on SpecFlow step definitions see https://go.specflow.org/doc-stepdef
+        IWebDriver driver;
 
         private readonly ScenarioContext _scenarioContext;
 
-        public LoginSteps(ScenarioContext scenarioContext)
+        public LoginSteps(IWebDriver driver)
         {
-            _scenarioContext = scenarioContext;
+            this.driver = driver;
         }
 
         [Given(@"I am on the gametwist home page")]
         public void GivenIAmOnTheGametwistHomePage()
         {
-            ScenarioContext.Current.Pending();
+            driver.Navigate().GoToUrl("https:www.google.com");
         }
 
         [When(@"I click login button")]

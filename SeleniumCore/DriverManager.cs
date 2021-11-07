@@ -16,15 +16,5 @@ namespace GreenTubeSLN.SeleniumCore
             }
             return driver;
         }
-
-        public void QuitWebDriver()
-        {
-            if (null != driver)
-            {
-                driver.Close();
-                driver.Quit();
-                driver = null;
-            }
-        }
     }
 }
