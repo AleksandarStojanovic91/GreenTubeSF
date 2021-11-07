@@ -4,7 +4,7 @@
 	I want to see appropriate error messages, also i should be able to select other languages
 	And see appropriate translations.
 
-@Login @HappyPath
+@Login @HappyPath @Smoke @Regression
 Scenario: Login to gametwist.com with valid credentials
 		As a user I want to be able to login to gametwist.com using valid credentials.
 	Given I am on the gametwist home page
@@ -14,7 +14,7 @@ Scenario: Login to gametwist.com with valid credentials
 	And I click submit login button
 	Then I should see my profile username
 
-@Login @HappyPath @RegistartionPageLogin
+@Login @HappyPath @RegistartionPageLogin @Regression
 Scenario: Login to gametwist.com with valid credentials through registration's page login
 		As a user I want to be able to login to gametwist.com using valid credentials,
 		from registration page.
@@ -26,7 +26,7 @@ Scenario: Login to gametwist.com with valid credentials through registration's p
 	And I click submit login button
 	Then I should see my profile username
 
-@Login @HappyPath @LanguageTransaltion
+@Login @HappyPath @LanguageTransaltion @Regression
 Scenario Outline: Verify Translation of Login Form
 		As a user I want to be able to use other languages when logging in,
 		and I want to verify all text values are correct on a login form.
@@ -60,12 +60,18 @@ Scenario Outline: Try to Login to gametwist.com with invalid credentials using o
 	And I should see password error message '<passwordErrorMessage>'
 	And I should see form error '<formError>'
 
+	@Regression
 	Examples: 
 	| username      | password     | usernameErrorMessage | passwordErrorMessage | formError							   |
 	| null          | NoUsername   | Nickname required    | null                 | null									   |
 	| NoPassword	| null		   | null			      | Password required    | null									   |
 	| null        	| null         | Nickname required    | Password required    | null								       |
 	| NonRegistered | TestPass123! | null                 | null                 | Incorrect nickname/password combination.|
+	| AlexBg91      | WrongPass    | null                 |	null			     | Incorrect nickname/password combination.|
+
+	@Smoke
+	Examples: 
+	| username      | password     | usernameErrorMessage | passwordErrorMessage | formError							   |
 	| AlexBg91      | WrongPass    | null                 |	null			     | Incorrect nickname/password combination.|
 
 @Login @NegativeScenarios @LanguageTransaltion
@@ -82,10 +88,16 @@ Scenario Outline: Try to Login to gametwist.com with invalid credentials
 	And I should see password error message '<passwordErrorMessage>'
 	And I should see form error '<formError>'
 
+	@Regression
 	Examples: 
 	| language | username      | password     | usernameErrorMessage | passwordErrorMessage     | formError                                 |
 	| FR       | null          | NoUsername   | Pseudo manquant      | null                     | null                                      |
 	| FR       | NoPassword    | null         | null                 | Mot de passe manquant    | null                                      |
 	| FR       | null          | null         | Pseudo manquant      | Mot de passe manquant    | null                                      |
 	| FR       | NonRegistered | TestPass123! | null                 | null                     | Mauvaise combinaison pseudo/mot de passe. |
+	| FR       | AlexBg91      | WrongPass    | null                 | null			            | Mauvaise combinaison pseudo/mot de passe. |
+
+	@Smoke
+	Examples: 
+	| language | username      | password     | usernameErrorMessage | passwordErrorMessage     | formError                                 |
 	| FR       | AlexBg91      | WrongPass    | null                 | null			            | Mauvaise combinaison pseudo/mot de passe. |
