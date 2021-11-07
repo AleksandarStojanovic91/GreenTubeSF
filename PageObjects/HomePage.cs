@@ -130,12 +130,14 @@ namespace GreenTubeSLN.PageObjects
         #region Flows
         public void Login(string username, string password)
         {
+            ClickLoginHeaderButton();
             EnterUsername(username);
             EnterPassword(password);
             ClickSubmitLoginButton();
         }
         public void ResetPassword(string username, string email)
         {
+            ClickLoginHeaderButton();
             ClickForgotennPasswordLink();
             EnterUsername(username);
             EnterEmail(email);
