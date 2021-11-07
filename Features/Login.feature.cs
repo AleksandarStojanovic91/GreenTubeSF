@@ -80,11 +80,15 @@ namespace GreenTubeSF.Features
         [NUnit.Framework.DescriptionAttribute("Login to gametwist.com with valid credentials")]
         [NUnit.Framework.CategoryAttribute("Login")]
         [NUnit.Framework.CategoryAttribute("HappyPath")]
+        [NUnit.Framework.CategoryAttribute("Smoke")]
+        [NUnit.Framework.CategoryAttribute("Regression")]
         public virtual void LoginToGametwist_ComWithValidCredentials()
         {
             string[] tagsOfScenario = new string[] {
                     "Login",
-                    "HappyPath"};
+                    "HappyPath",
+                    "Smoke",
+                    "Regression"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login to gametwist.com with valid credentials", "\t\tAs a user I want to be able to login to gametwist.com using valid credentials.", tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 8
@@ -134,12 +138,14 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("Login")]
         [NUnit.Framework.CategoryAttribute("HappyPath")]
         [NUnit.Framework.CategoryAttribute("RegistartionPageLogin")]
+        [NUnit.Framework.CategoryAttribute("Regression")]
         public virtual void LoginToGametwist_ComWithValidCredentialsThroughRegistrationsPageLogin()
         {
             string[] tagsOfScenario = new string[] {
                     "Login",
                     "HappyPath",
-                    "RegistartionPageLogin"};
+                    "RegistartionPageLogin",
+                    "Regression"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login to gametwist.com with valid credentials through registration\'s page login", "\t\tAs a user I want to be able to login to gametwist.com using valid credentials,\r" +
                     "\n\t\tfrom registration page.", tagsOfScenario, argumentsOfScenario, this._featureTags);
@@ -193,13 +199,16 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("Login")]
         [NUnit.Framework.CategoryAttribute("HappyPath")]
         [NUnit.Framework.CategoryAttribute("LanguageTransaltion")]
+        [NUnit.Framework.CategoryAttribute("Regression")]
+        [NUnit.Framework.TestCaseAttribute("EN", "Login", "Nickname", "Password", "Log in automatically", "LOG IN", "Forgotten your password?", "You don\'t have an account yet?", "Register now", null)]
         [NUnit.Framework.TestCaseAttribute("FR", "Connexion", "Pseudo", "Mot de passe", "Connexion automatique", "CONNEXION", "Mot de passe oublié ?", "Tu n\'as pas encore de compte ?", "S\'inscrire maintenant", null)]
         public virtual void VerifyTranslationOfLoginForm(string language, string formHeaderText, string usernameLabel, string passwordLabel, string autoLoginText, string loginButtonText, string forgotPasswordText, string dontHaveAccountText, string registerNowText, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Login",
                     "HappyPath",
-                    "LanguageTransaltion"};
+                    "LanguageTransaltion",
+                    "Regression"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -278,11 +287,18 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.DescriptionAttribute("Try to Login to gametwist.com with invalid credentials using other languages")]
         [NUnit.Framework.CategoryAttribute("Login")]
         [NUnit.Framework.CategoryAttribute("NegativeScenarios")]
-        [NUnit.Framework.TestCaseAttribute("null", "NoUsername", "Nickname required", "null", "null", null)]
-        [NUnit.Framework.TestCaseAttribute("NoPassword", "null", "null", "Password required", "null", null)]
-        [NUnit.Framework.TestCaseAttribute("null", "null", "Nickname required", "Password required", "null", null)]
-        [NUnit.Framework.TestCaseAttribute("NonRegistered", "TestPass123!", "null", "null", "Incorrect nickname/password combination.", null)]
-        [NUnit.Framework.TestCaseAttribute("AlexBg91", "WrongPass", "null", "null", "Incorrect nickname/password combination.", null)]
+        [NUnit.Framework.TestCaseAttribute("null", "NoUsername", "Nickname required", "null", "null", new string[] {
+                "Regression"}, Category="Regression")]
+        [NUnit.Framework.TestCaseAttribute("NoPassword", "null", "null", "Password required", "null", new string[] {
+                "Regression"}, Category="Regression")]
+        [NUnit.Framework.TestCaseAttribute("null", "null", "Nickname required", "Password required", "null", new string[] {
+                "Regression"}, Category="Regression")]
+        [NUnit.Framework.TestCaseAttribute("NonRegistered", "TestPass123!", "null", "null", "Incorrect nickname/password combination.", new string[] {
+                "Regression"}, Category="Regression")]
+        [NUnit.Framework.TestCaseAttribute("AlexBg91", "WrongPass", "null", "null", "Incorrect nickname/password combination.", new string[] {
+                "Regression"}, Category="Regression")]
+        [NUnit.Framework.TestCaseAttribute("AlexBg91", "WrongPass", "null", "null", "Incorrect nickname/password combination.", new string[] {
+                "Smoke"}, Category="Smoke")]
         public virtual void TryToLoginToGametwist_ComWithInvalidCredentialsUsingOtherLanguages(string username, string password, string usernameErrorMessage, string passwordErrorMessage, string formError, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -302,7 +318,7 @@ this.ScenarioInitialize(scenarioInfo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Try to Login to gametwist.com with invalid credentials using other languages", "\t\tAs a user when I do not enter or I enter invalid credentials \r\n\t\tI should see t" +
                     "he appropriate error messages for the approprioate fields with correct transalti" +
                     "on.", tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 51
+#line 52
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -322,28 +338,28 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 54
+#line 55
  testRunner.Given("I am on the gametwist home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 55
+#line 56
  testRunner.When("I click login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 56
+#line 57
  testRunner.And(string.Format("I enter username \'{0}\'", username), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 57
+#line 58
  testRunner.And(string.Format("I enter password \'{0}\'", password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 58
+#line 59
  testRunner.When("I click submit login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 59
+#line 60
  testRunner.Then(string.Format("I should see username error message \'{0}\'", usernameErrorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 60
+#line 61
  testRunner.And(string.Format("I should see password error message \'{0}\'", passwordErrorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 61
+#line 62
  testRunner.And(string.Format("I should see form error \'{0}\'", formError), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -355,11 +371,18 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("Login")]
         [NUnit.Framework.CategoryAttribute("NegativeScenarios")]
         [NUnit.Framework.CategoryAttribute("LanguageTransaltion")]
-        [NUnit.Framework.TestCaseAttribute("FR", "null", "NoUsername", "Pseudo manquant", "null", "null", null)]
-        [NUnit.Framework.TestCaseAttribute("FR", "NoPassword", "null", "null", "Mot de passe manquant", "null", null)]
-        [NUnit.Framework.TestCaseAttribute("FR", "null", "null", "Pseudo manquant", "Mot de passe manquant", "null", null)]
-        [NUnit.Framework.TestCaseAttribute("FR", "NonRegistered", "TestPass123!", "null", "null", "Mauvaise combinaison pseudo/mot de passe.", null)]
-        [NUnit.Framework.TestCaseAttribute("FR", "AlexBg91", "WrongPass", "null", "null", "Mauvaise combinaison pseudo/mot de passe.", null)]
+        [NUnit.Framework.TestCaseAttribute("FR", "null", "NoUsername", "Pseudo manquant", "null", "null", new string[] {
+                "Regression"}, Category="Regression")]
+        [NUnit.Framework.TestCaseAttribute("FR", "NoPassword", "null", "null", "Mot de passe manquant", "null", new string[] {
+                "Regression"}, Category="Regression")]
+        [NUnit.Framework.TestCaseAttribute("FR", "null", "null", "Pseudo manquant", "Mot de passe manquant", "null", new string[] {
+                "Regression"}, Category="Regression")]
+        [NUnit.Framework.TestCaseAttribute("FR", "NonRegistered", "TestPass123!", "null", "null", "Mauvaise combinaison pseudo/mot de passe.", new string[] {
+                "Regression"}, Category="Regression")]
+        [NUnit.Framework.TestCaseAttribute("FR", "AlexBg91", "WrongPass", "null", "null", "Mauvaise combinaison pseudo/mot de passe.", new string[] {
+                "Regression"}, Category="Regression")]
+        [NUnit.Framework.TestCaseAttribute("FR", "AlexBg91", "WrongPass", "null", "null", "Mauvaise combinaison pseudo/mot de passe.", new string[] {
+                "Smoke"}, Category="Smoke")]
         public virtual void TryToLoginToGametwist_ComWithInvalidCredentials(string language, string username, string password, string usernameErrorMessage, string passwordErrorMessage, string formError, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -380,7 +403,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("formError", formError);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Try to Login to gametwist.com with invalid credentials", "\t\tAs a user when I do not enter or I enter invalid credentials \r\n\t\tI should see t" +
                     "he appropriate error messages for the approprioate fields.", tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 72
+#line 79
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -400,31 +423,31 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 75
+#line 82
  testRunner.Given("I am on the gametwist home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 76
+#line 83
  testRunner.When(string.Format("I change language to \'{0}\'", language), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 77
+#line 84
  testRunner.And("I click login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 78
+#line 85
  testRunner.And(string.Format("I enter username \'{0}\'", username), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 79
+#line 86
  testRunner.And(string.Format("I enter password \'{0}\'", password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 80
+#line 87
  testRunner.When("I click submit login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 81
+#line 88
  testRunner.Then(string.Format("I should see username error message \'{0}\'", usernameErrorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 82
+#line 89
  testRunner.And(string.Format("I should see password error message \'{0}\'", passwordErrorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 83
+#line 90
  testRunner.And(string.Format("I should see form error \'{0}\'", formError), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }

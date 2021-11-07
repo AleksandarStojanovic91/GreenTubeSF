@@ -35,12 +35,6 @@ namespace GreenTubeSF.Steps
             homePage.ClickLoginHeaderButton();
         }
 
-        [When(@"I click register button")]
-        public void WhenIClickRegisterButton()
-        {
-            homePage.ClickRegisterHeaderButton();
-        }
-
         [When(@"I change language to '(.*)'")]
         public void WhenIChangeLanguageTo(string language)
         {

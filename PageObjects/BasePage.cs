@@ -59,15 +59,44 @@ namespace GreenTubeSF.PageObjects
             }
         }
 
+        public void SelectElementByValue(IWebElement element, string value)
+        {
+            wdWait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitTime));
+            wdWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(element));
+            try
+            {
+                SelectElement select = new SelectElement(element);
+                select.SelectByValue(value);
+            }
+            catch (StaleElementReferenceException)
+            {
+                SelectElement select = new SelectElement(element);
+                select.SelectByValue(value);
+            }
+        }
+
         public void AssertEquals(string expected, IWebElement element) 
         {
             if (expected != null && !expected.Equals("null")) 
             {
                 wdWait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitTime));
                 wdWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(element));
-                Console.WriteLine("expected: " + expected + " Actual: " + element.Text);
                 Assert.AreEqual(expected, element.Text);
             }
+        }
+
+        public void AssertEquals(string expected, string actual)
+        {
+            if (expected != null && !expected.Equals("null"))
+            {
+                Assert.AreEqual(expected, actual);
+            }
+        }
+
+        public string CurrentTimeMillis() 
+        {
+            DateTime Jan1st1970 = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+            return (DateTime.UtcNow - Jan1st1970).TotalMilliseconds.ToString();
         }
 
         //TODO add more wrapper methods, screenshots etc...

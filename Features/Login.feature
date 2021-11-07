@@ -43,8 +43,9 @@ Scenario Outline: Verify Translation of Login Form
 	And register now text should be '<registerNowText>'
 
 	Examples: 
-	| language | formHeaderText | usernameLabel | passwordLabel | autoLoginText         | loginButtonText | forgotPasswordText    | dontHaveAccountText            | registerNowText       |
-	| FR       | Connexion      | Pseudo        | Mot de passe  | Connexion automatique | CONNEXION       | Mot de passe oublié ? | Tu n'as pas encore de compte ? | S'inscrire maintenant |
+	| language | formHeaderText | usernameLabel | passwordLabel | autoLoginText         | loginButtonText | forgotPasswordText       | dontHaveAccountText            | registerNowText       |
+	| EN       | Login          | Nickname      | Password      | Log in automatically  | LOG IN          | Forgotten your password? | You don't have an account yet? | Register now          |
+	| FR       | Connexion      | Pseudo        | Mot de passe  | Connexion automatique | CONNEXION       | Mot de passe oublié ?    | Tu n'as pas encore de compte ? | S'inscrire maintenant |
 	#TODO add more langauges
 
 @Login @NegativeScenarios
@@ -74,7 +75,7 @@ Scenario Outline: Try to Login to gametwist.com with invalid credentials using o
 	| username      | password     | usernameErrorMessage | passwordErrorMessage | formError							   |
 	| AlexBg91      | WrongPass    | null                 |	null			     | Incorrect nickname/password combination.|
 
-@Login @NegativeScenarios @LanguageTransaltion
+@Login @NegativeScenarios @LanguageTransaltion 
 Scenario Outline: Try to Login to gametwist.com with invalid credentials
 		As a user when I do not enter or I enter invalid credentials 
 		I should see the appropriate error messages for the approprioate fields.

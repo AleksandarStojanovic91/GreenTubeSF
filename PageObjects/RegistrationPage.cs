@@ -80,7 +80,53 @@ namespace GreenTubeSLN.PageObjects
         #endregion
 
         #endregion Elements
-        //TODO add methods
+
+        #region Type Actions
+        public void EnterUniqueEmail(string email) 
+        {
+            TypeText(Email, email.Replace("@", CurrentTimeMillis()+"@"));
+        }
+        public void EnterUniqueUsername(string username)
+        {
+            TypeText(Username, username+CurrentTimeMillis());
+        }
+        public void EnterPassword(string password)
+        {
+            TypeText(Password, password);
+        }
+        #endregion
+
+        #region Select actions
+        public void SelectDOB(string day,string month, string year)
+        {
+            SelectElementByValue(Day, day);
+            SelectElementByValue(Month, month);
+            SelectElementByValue(Year, year);
+        }
+        #endregion
+
+        #region Click actions
+        public void ClickReCaptcha()
+        {
+            //TODO SWITCH TO A NEW FRAME 
+            ClickElement(Captcha);
+        }
+        public void ClickAgreeWithGTC()
+        {
+            ClickElement(GTC);
+        }
+        public void ClickBeginAdventure()
+        {
+            ClickElement(BeginAdventure);
+        }
+        #endregion
+
+        #region Verifications
+        public void VerifyConfirmationURL()
+        {
+            AssertEquals("https://www.gametwist.com/en/registration/confirmation", driver.Url);
+        }
+        #endregion
 
     }
 }

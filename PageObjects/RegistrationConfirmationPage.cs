@@ -46,7 +46,17 @@ namespace GreenTubeSLN.PageObjects
 
         #endregion Elements
 
-        //TODO add methods
+        #region Validations
+        public void VerifyWelcomeBonusMessage() 
+        {
+            AssertEquals("Your Welcome Bonus is waiting for you: 30,000 Twists & 15 Free Spins for Book of Ra™ deluxe!", WelcomeBonusText.Text);
+        }
+
+        public void VerifyEmailConfirmationMessage()
+        {
+            AssertEquals("The confirmation e-mail has been sent to your e-mail address! - Click on the link in this e-mail to confirm your e-mail address.", WelcomeBonusText.Text);
+        }
+        #endregion
 
     }
 }
