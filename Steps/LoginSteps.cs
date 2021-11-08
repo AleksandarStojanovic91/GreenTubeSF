@@ -76,6 +76,7 @@ namespace GreenTubeSF.Steps
         [Then(@"I should see my profile username")]
         public void ThenIShouldSeeMyProfileUsername()
         {
+            loggedInPage.CloseWheel();
             loggedInPage.VerifyUsername("AlexBg91");
         }
 

@@ -229,6 +229,12 @@ namespace GreenTubeSF.Steps
             registrationPage.VerifyDayErrorMessage(dateError);
         }
 
+        [When(@"I enter registration username '(.*)'")]
+        public void WhenIEnterRegistrationUsername(string username)
+        {
+            registrationPage.EnterUsername(username);
+        }
+
         #endregion
 
     }

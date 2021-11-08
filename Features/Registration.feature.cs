@@ -227,36 +227,33 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("I click register now link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 32
- testRunner.And("I click register button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 33
  testRunner.And(string.Format("I enter unique email \'{0}\'", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 34
+#line 33
  testRunner.And(string.Format("I enter unique username \'{0}\'", username), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 35
+#line 34
  testRunner.And(string.Format("I enter registration password \'{0}\'", password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 36
+#line 35
  testRunner.And(string.Format("I select day \'{0}\' month \'{1}\' and \'{2}\' of birth", day, month, year), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 37
+#line 36
  testRunner.And("I click agree with GTC", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 38
+#line 37
  testRunner.And("I click recaptcha", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 39
+#line 38
  testRunner.And("I click begin adventure button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 40
+#line 39
  testRunner.Then("I should be on a registration confirmation page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 41
+#line 40
  testRunner.And("I should see welcome bonus message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 42
+#line 41
  testRunner.And("I should see confirmation email message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -301,7 +298,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("buttonText", buttonText);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify registration form labels and tooltips", "\tAs a user I want to see element tooltips and labels displayed correctly and tran" +
                     "slated accordingly.", tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 49
+#line 48
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -321,55 +318,55 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 51
+#line 50
  testRunner.Given("I am on the gametwist home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 52
+#line 51
  testRunner.When(string.Format("I change language to \'{0}\'", language), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 53
+#line 52
  testRunner.And("I click register button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 54
+#line 53
  testRunner.And("I click email input field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 55
+#line 54
  testRunner.Then(string.Format("I should see an email toltip \'{0}\'", emailTooltip), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 56
+#line 55
  testRunner.And(string.Format("I should see email label text \'{0}\'", emailLabel), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 57
+#line 56
  testRunner.When("I click username input field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 58
+#line 57
  testRunner.Then(string.Format("I should see a username toltip \'{0}\'", usernameTooltip), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 59
+#line 58
  testRunner.And(string.Format("I should see username label text \'{0}\'", usernameLabel), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 60
+#line 59
  testRunner.When("I click password input field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 61
+#line 60
  testRunner.Then(string.Format("I should see a password tooltip \'{0}\'", passwordTooltip), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 62
+#line 61
  testRunner.And(string.Format("I should see a password tooltip \'{0}\'", passwordTooltip2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 63
+#line 62
  testRunner.And(string.Format("I should see password label text \'{0}\'", passwordLabel), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 64
+#line 63
  testRunner.And(string.Format("I should see date label text \'{0}\'", dateLabel), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 65
+#line 64
  testRunner.And(string.Format("I should see GTC text \'{0}\'", gTCText), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 66
+#line 65
  testRunner.And(string.Format("I should see welcome bonus text \'{0}\'", welcomeBonusText), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 67
+#line 66
  testRunner.And(string.Format("begin adventrure button text should be \'{0}\'", buttonText), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -409,7 +406,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("recaptchaErrorMessage", recaptchaErrorMessage);
             argumentsOfScenario.Add("gtcErrorMessage", gtcErrorMessage);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify field error messages and transaltion", "\tAs a user I want to be shown error messages on invalid or on no input.", tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 81
+#line 80
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -429,40 +426,40 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 83
+#line 82
  testRunner.Given("I am on the gametwist home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 84
+#line 83
  testRunner.When(string.Format("I change language to \'{0}\'", language), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 85
+#line 84
  testRunner.And("I click register button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 86
+#line 85
  testRunner.And("I click begin adventure button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 87
+#line 86
  testRunner.Then(string.Format("I should see email error message \'{0}\'", emailErrorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 88
+#line 87
  testRunner.And(string.Format("I should see username error message \'{0}\'", usernameErrorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 89
+#line 88
  testRunner.And(string.Format("I should see password error message \'{0}\'", passwordErrorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 90
+#line 89
  testRunner.And(string.Format("I should see day error message \'{0}\'", dayErrorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 91
+#line 90
  testRunner.And(string.Format("I should see month error message \'{0}\'", monthErrorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 92
+#line 91
  testRunner.And(string.Format("I should see year error message \'{0}\'", yearErrorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 93
+#line 92
  testRunner.And(string.Format("I should see recaptcha error message \'{0}\'", recaptchaErrorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 94
+#line 93
  testRunner.And(string.Format("I should see GTC error message \'{0}\'", gtcErrorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -490,7 +487,6 @@ this.ScenarioInitialize(scenarioInfo);
             ".", "null", null)]
         [NUnit.Framework.TestCaseAttribute("EN", "mail@mail.com", "usernameTest", "qwe123@", "1", "2", "1991", "null", "null", "Your password must be at least 8 characters long.", "null", null)]
         [NUnit.Framework.TestCaseAttribute("EN", "mail@mail.com", "usernameTest", "TestPass123!", "1", "12", "2003", "null", "null", "null", "The minimum legal age required for using our offerings is 18 years.", null)]
-        [NUnit.Framework.TestCaseAttribute("EN", "registered@mail.com", "usernameTest", "TestPass123!", "1", "12", "2003", "The e-mail address you entered is already in use.", "null", "null", "null", null)]
         public virtual void TryToRegisterAtGametwist_ComWithInvalidValues(string language, string email, string username, string password, string day, string month, string year, string emailErrorMessage, string usernameErrorMessage, string passwordErrorMessage, string dateErrorMessage, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -518,7 +514,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("dateErrorMessage", dateErrorMessage);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Try to Register at gametwist.com with invalid values", "\tAs a user I should be able to fill out the registration form with invalid data \r" +
                     "\n\tand on sumbit I should see appropriate error messages", tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 108
+#line 107
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -538,44 +534,132 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 111
+#line 110
  testRunner.Given("I am on the gametwist home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 112
+#line 111
  testRunner.When(string.Format("I change language to \'{0}\'", language), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 113
+#line 112
  testRunner.When("I click register button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 114
+#line 113
  testRunner.And("I close cookie popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 115
+#line 114
  testRunner.And(string.Format("I enter email \'{0}\'", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 116
- testRunner.And(string.Format("I enter username \'{0}\'", username), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 115
+ testRunner.And(string.Format("I enter registration username \'{0}\'", username), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 117
+#line 116
  testRunner.And(string.Format("I enter registration password \'{0}\'", password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 118
+#line 117
  testRunner.And(string.Format("I select day \'{0}\' month \'{1}\' and \'{2}\' of birth", day, month, year), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 119
+#line 118
  testRunner.And("I click begin adventure button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 120
+#line 119
  testRunner.Then(string.Format("I should see email error message \'{0}\'", emailErrorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 121
+#line 120
  testRunner.And(string.Format("I should see username error message \'{0}\'", usernameErrorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 122
+#line 121
  testRunner.And(string.Format("I should see password error message \'{0}\'", passwordErrorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 123
+#line 122
  testRunner.And(string.Format("I should see date error message \'{0}\'", dateErrorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Try to Register already registered user")]
+        [NUnit.Framework.CategoryAttribute("Registration")]
+        [NUnit.Framework.CategoryAttribute("Negative")]
+        [NUnit.Framework.CategoryAttribute("Chrome")]
+        [NUnit.Framework.CategoryAttribute("Firefox")]
+        [NUnit.Framework.CategoryAttribute("Regression")]
+        [NUnit.Framework.TestCaseAttribute("EN", "registered@mail.com", "usernameTest", "TestPass123!", "1", "2", "1991", "The e-mail address you entered is already in use.", null)]
+        public virtual void TryToRegisterAlreadyRegisteredUser(string language, string email, string username, string password, string day, string month, string year, string emailErrorMessage, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Registration",
+                    "Negative",
+                    "Chrome",
+                    "Firefox",
+                    "Regression"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("language", language);
+            argumentsOfScenario.Add("email", email);
+            argumentsOfScenario.Add("username", username);
+            argumentsOfScenario.Add("password", password);
+            argumentsOfScenario.Add("day", day);
+            argumentsOfScenario.Add("month", month);
+            argumentsOfScenario.Add("year", year);
+            argumentsOfScenario.Add("emailErrorMessage", emailErrorMessage);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Try to Register already registered user", "\tAs a user I shouldnt be able to register using already registered email", tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 139
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 141
+ testRunner.Given("I am on the gametwist home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 142
+ testRunner.When("I click register button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 143
+ testRunner.And("I close cookie popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 144
+ testRunner.And(string.Format("I enter email \'{0}\'", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 145
+ testRunner.And(string.Format("I enter username \'{0}\'", username), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 146
+ testRunner.And(string.Format("I enter registration password \'{0}\'", password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 147
+ testRunner.And(string.Format("I select day \'{0}\' month \'{1}\' and \'{2}\' of birth", day, month, year), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 148
+ testRunner.And("I click agree with GTC", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 149
+ testRunner.And("I click recaptcha", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 150
+ testRunner.And("I click begin adventure button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 151
+ testRunner.Then(string.Format("I should see email error message \'{0}\'", emailErrorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -4,6 +4,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.PageObjects;
 using System;
+using System.Threading;
 
 namespace GreenTubeSLN.PageObjects
 {
@@ -23,6 +24,8 @@ namespace GreenTubeSLN.PageObjects
 
         [FindsBy(How = How.CssSelector, Using = ".c-bar-status__username")]
         IWebElement Username { get; set; }
+        [FindsBy(How = How.CssSelector, Using = ".c-wheel__btn-close")]
+        IWebElement CloseWheelButton { get; set; }
 
         #endregion Elements
 
@@ -30,6 +33,18 @@ namespace GreenTubeSLN.PageObjects
         public void VerifyUsername(string text)
         {
             Assert.AreEqual(text, Username.Text);
+        }
+        public void CloseWheel()
+        {
+            try
+            {
+                ClickElement(CloseWheelButton);
+                Thread.Sleep(3000);
+            }
+            catch
+            { 
+                //Ignore
+            }
         }
         #endregion
 

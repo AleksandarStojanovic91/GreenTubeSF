@@ -29,7 +29,6 @@ Scenario Outline: Register at gametwist.com through register now link
 	Given I am on the gametwist home page
 	When I click login button
 	And I click register now link
-	And I click register button
 	And I enter unique email '<email>'
 	And I enter unique username '<username>'
 	And I enter registration password '<password>'
@@ -113,7 +112,7 @@ Scenario Outline: Try to Register at gametwist.com with invalid values
 	When I click register button
 	And I close cookie popup
 	And I enter email '<email>'
-	And I enter username '<username>'
+	And I enter registration username '<username>'
 	And I enter registration password '<password>'
 	And I select day '<day>' month '<month>' and '<year>' of birth
 	And I click begin adventure button
@@ -135,6 +134,23 @@ Scenario Outline: Try to Register at gametwist.com with invalid values
 	| EN       | mail@mail.com            | usernameTest   | @@@@1234     | 1   | 2     | 1991 | null                                              | null                                                                  | Your password must contain at least one letter, one number or a special character. | null                                                                |
 	| EN       | mail@mail.com            | usernameTest   | qwe123@      | 1   | 2     | 1991 | null                                              | null                                                                  | Your password must be at least 8 characters long.                                  | null                                                                |
 	| EN       | mail@mail.com            | usernameTest   | TestPass123! | 1   | 12    | 2003 | null                                              | null                                                                  | null                                                                               | The minimum legal age required for using our offerings is 18 years. |
-	| EN       | registered@mail.com      | usernameTest   | TestPass123! | 1   | 12    | 2003 | The e-mail address you entered is already in use. | null                                                                  | null                                                                               | null                                                                |
 
+@Registration @Negative @Chrome @Firefox @Regression
+Scenario Outline: Try to Register already registered user
+	As a user I shouldnt be able to register using already registered email
+	Given I am on the gametwist home page
+	When I click register button
+	And I close cookie popup
+	And I enter email '<email>'
+	And I enter username '<username>'
+	And I enter registration password '<password>'
+	And I select day '<day>' month '<month>' and '<year>' of birth
+	And I click agree with GTC
+	And I click recaptcha
+	And I click begin adventure button
+	Then I should see email error message '<emailErrorMessage>'
+
+	Examples: 
+	| language | email                    | username       | password     | day | month | year | emailErrorMessage                                 |
+	| EN       | registered@mail.com      | usernameTest   | TestPass123! | 1   | 2     | 1991 | The e-mail address you entered is already in use. |
 

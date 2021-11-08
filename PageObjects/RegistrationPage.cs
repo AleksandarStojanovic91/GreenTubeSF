@@ -99,6 +99,10 @@ namespace GreenTubeSLN.PageObjects
         {
             TypeText(Username, username+CurrentTimeMillis());
         }
+        public void EnterUsername(string username)
+        {
+            TypeText(Username, username);
+        }
         public void EnterPassword(string password)
         {
             TypeText(Password, password);
@@ -172,7 +176,7 @@ namespace GreenTubeSLN.PageObjects
         #region Verifications
         public void VerifyConfirmationURL()
         {
-            Thread.Sleep(3000);
+            Thread.Sleep(10000);
             AssertEquals("https://www.gametwist.com/en/registration/confirmation", driver.Url);
         }
         public void VerifyEmailTooltipText(string emailTooltipText) 
@@ -193,7 +197,10 @@ namespace GreenTubeSLN.PageObjects
         }
         public void VerifyPasswordTooltipText(string passwordTooltipText)
         {
-            Assert.True(PasswordTooltip.Text.Contains(passwordTooltipText));
+            if (passwordTooltipText != null && !passwordTooltipText.Equals("null") && !passwordTooltipText.Equals(""))
+            {
+                Assert.True(PasswordTooltip.Text.Contains(passwordTooltipText));
+            }
         }
         public void VerifyPasswordLabelText(string passwordLabelText)
         {

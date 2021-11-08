@@ -29,9 +29,9 @@ namespace GreenTubeSLN.PageObjects
         #endregion
 
         #region Login Form
-        [FindsBy(How = How.XPath, Using = "//*[@id='username' or @name='nickname']")]
+        [FindsBy(How = How.XPath, Using = "//*[@id='username']")]
         IWebElement Username { get; set; }
-        [FindsBy(How = How.XPath, Using = "//*[@id='password' or @name='password']")]
+        [FindsBy(How = How.XPath, Using = "//*[@id='password']")]
         IWebElement Password { get; set; }
         [FindsBy(How = How.Id, Using = "autologin")]
         IWebElement AutoLogin { get; set; }
@@ -195,7 +195,11 @@ namespace GreenTubeSLN.PageObjects
         }
         public void VerifyUsernameErrorText(string text)
         {
-            Assert.True(UsernameErrorMessage.Text.Contains(text));
+            if (text != null && !text.Equals("null") && !text.Equals(""))
+            {
+                Assert.True(UsernameErrorMessage.Text.Contains(text));
+            }
+
         }
         public void VerifyPasswordErrorText(string text)
         {
