@@ -12,7 +12,7 @@ namespace GreenTubeSF.PageObjects
     {
         IWebDriver driver;
         WebDriverWait wdWait;
-        int waitTime = 30;
+        int waitTime = 40;
 
         public BasePage(IWebDriver driver, WebDriverWait wdWait)
         {
@@ -77,7 +77,7 @@ namespace GreenTubeSF.PageObjects
 
         public void AssertEquals(string expected, IWebElement element) 
         {
-            if (expected != null && !expected.Equals("null")) 
+            if (expected != null && !expected.Equals("null") && !expected.Equals("")) 
             {
                 wdWait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitTime));
                 wdWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(element));
@@ -96,7 +96,7 @@ namespace GreenTubeSF.PageObjects
         public string CurrentTimeMillis() 
         {
             DateTime Jan1st1970 = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
-            return (DateTime.UtcNow - Jan1st1970).TotalMilliseconds.ToString();
+            return (DateTime.UtcNow - Jan1st1970).TotalMilliseconds.ToString().Replace(".","");
         }
 
         //TODO add more wrapper methods, screenshots etc...

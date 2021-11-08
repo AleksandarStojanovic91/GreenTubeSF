@@ -29,9 +29,9 @@ namespace GreenTubeSLN.PageObjects
         #endregion
 
         #region Login Form
-        [FindsBy(How = How.Id, Using = "username")]
+        [FindsBy(How = How.XPath, Using = "//*[@id='username' or @name='nickname']")]
         IWebElement Username { get; set; }
-        [FindsBy(How = How.Id, Using = "password")]
+        [FindsBy(How = How.XPath, Using = "//*[@id='password' or @name='password']")]
         IWebElement Password { get; set; }
         [FindsBy(How = How.Id, Using = "autologin")]
         IWebElement AutoLogin { get; set; }
@@ -50,9 +50,9 @@ namespace GreenTubeSLN.PageObjects
         IWebElement AutoLoginLabel { get; set; }
         [FindsBy(How = How.XPath, Using = "//input[@id='password']/../i")]
         IWebElement ShowHidePassword { get; set; }
-        [FindsBy(How = How.XPath, Using = "//input[@id='username']/../..//li")]
+        [FindsBy(How = How.XPath, Using = "//input[@id='username' or @name='nickname']/../..//li")]
         IWebElement UsernameErrorMessage { get; set; }
-        [FindsBy(How = How.XPath, Using = "//input[@id='password']/../..//li")]
+        [FindsBy(How = How.XPath, Using = "//input[@id='password' or @name='password']/../..//li")]
         IWebElement PasswordErrorMessage { get; set; }
         [FindsBy(How = How.CssSelector, Using = ".c-form-errors > li")]
         IWebElement WrongUsernameOrPasswordMessage { get; set; }
@@ -195,7 +195,7 @@ namespace GreenTubeSLN.PageObjects
         }
         public void VerifyUsernameErrorText(string text)
         {
-            AssertEquals(text, UsernameErrorMessage);
+            Assert.True(UsernameErrorMessage.Text.Contains(text));
         }
         public void VerifyPasswordErrorText(string text)
         {

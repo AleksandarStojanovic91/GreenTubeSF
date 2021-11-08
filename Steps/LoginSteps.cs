@@ -144,6 +144,12 @@ namespace GreenTubeSF.Steps
         {
             homePage.VerifyRegisterNowText(text);
         }
+
+        [When(@"I click register now link")]
+        public void WhenIClickRegisterNowLink()
+        {
+            homePage.ClickRegisterNowLink();
+        }
         #endregion
 
     }

@@ -72,6 +72,38 @@ namespace GreenTubeSF.Steps
         {
             registrationPage.ClickBeginAdventure();
         }
+
+        [When(@"I click email input field")]
+        public void WhenIClickEmailInputField()
+        {
+            registrationPage.ClickEmailField();
+        }
+
+        [When(@"I click username input field")]
+        public void WhenIClickUsernameInputField()
+        {
+            registrationPage.ClickUsernameField();
+        }
+
+        [When(@"I click password input field")]
+        public void WhenIClickPasswordInputField()
+        {
+            registrationPage.ClickPasswordField();
+        }
+
+
+        [When(@"I enter email '(.*)'")]
+        public void WhenIEnterEmail(string email)
+        {
+            registrationPage.EnterEmail(email);
+        }
+
+        [When(@"I close cookie popup")]
+        public void WhenICloseCookiePopup()
+        {
+            registrationPage.CloseCookiePopup();
+        }
+
         #endregion
 
         #region Then
@@ -92,6 +124,111 @@ namespace GreenTubeSF.Steps
         {
             registrationConfirmationPage.VerifyEmailConfirmationMessage();
         }
+
+        [Then(@"I should see an email toltip '(.*)'")]
+        public void ThenIShouldSeeAnEmailToltip(string emailTooltip)
+        {
+            registrationPage.VerifyEmailTooltipText(emailTooltip);
+        }
+
+        [Then(@"I should see email label text '(.*)'")]
+        public void ThenIShouldSeeEmailLabelText(string emailLabel)
+        {
+            registrationPage.VerifyEmailLabelText(emailLabel);
+        }
+
+        [Then(@"I should see a username toltip '(.*)'")]
+        public void ThenIShouldSeeAUsernameToltip(string usernameTooltip)
+        {
+            registrationPage.VerifyUsernameTooltipText(usernameTooltip);
+        }
+
+        [Then(@"I should see username label text '(.*)'")]
+        public void ThenIShouldSeeUsernameLabelText(string usernameLabel)
+        {
+            registrationPage.VerifyUsernameLabelText(usernameLabel);
+        }
+        [Then(@"I should see a password tooltip '(.*)'")]
+
+        public void ThenIShouldSeeAPasswordTooltip(string passwordTooltip)
+        {
+            registrationPage.VerifyPasswordTooltipText(passwordTooltip);
+        }
+
+        [Then(@"I should see password label text '(.*)'")]
+        public void ThenIShouldSeePasswordLabelText(string passwordLabel)
+        {
+            registrationPage.VerifyPasswordLabelText(passwordLabel);
+        }
+
+        [Then(@"I should see date label text '(.*)'")]
+        public void ThenIShouldSeeDateLabelText(string dateLabel)
+        {
+            registrationPage.VerifyDateLabelText(dateLabel);
+        }
+
+        [Then(@"I should see GTC text '(.*)'")]
+        public void ThenIShouldSeeGTCText(string GTCText)
+        {
+            registrationPage.VerifyGTCText(GTCText);
+        }
+
+        [Then(@"I should see welcome bonus text '(.*)'")]
+        public void ThenIShouldSeeWelcomeBonusText(string bonusText)
+        {
+            registrationPage.VerifyWelcomeBonusText(bonusText);
+        }
+
+        [Then(@"begin adventrure button text should be '(.*)'")]
+        public void ThenBeginAdventrureButtonTextShouldBe(string buttonText)
+        {
+            registrationPage.VerifyBeginAdventureButtonText(buttonText);
+        }
+
+        [Then(@"I should see email error message '(.*)'")]
+        public void ThenIShouldSeeEmailErrorMessage(string emailError)
+        {
+            registrationPage.VerifyEmailErrorMessage(emailError);
+        }
+
+        [Then(@"I should see day error message '(.*)'")]
+        public void ThenIShouldSeeDayErrorMessage(string dayError)
+        {
+            registrationPage.VerifyDayErrorMessage(dayError);
+        }
+
+        [Then(@"I should see month error message '(.*)'")]
+        public void ThenIShouldSeeMonthErrorMessage(string monthError)
+        {
+            registrationPage.VerifyMonthErrorMessage(monthError);
+        }
+
+        [Then(@"I should see year error message '(.*)'")]
+        public void ThenIShouldSeeYearErrorMessage(string year)
+        {
+            registrationPage.VerifyYearErrorMessage(year);
+        }
+
+        [Then(@"I should see recaptcha error message '(.*)'")]
+        public void ThenIShouldSeeRecaptchaErrorMessage(string captchaError)
+        {
+            registrationPage.VerifyCaptchaErrorMessage(captchaError);
+        }
+
+        [Then(@"I should see GTC error message '(.*)'")]
+        public void ThenIShouldSeeGTCErrorMessage(string GTCError)
+        {
+            registrationPage.VerifyGTCErrorMessage(GTCError);
+        }
+
+        [Then(@"I should see date error message '(.*)'")]
+        public void ThenIShouldSeeDateErrorMessage(string dateError)
+        {
+            Console.WriteLine("DATEEEEEEEE: "+dateError);
+                
+            registrationPage.VerifyDayErrorMessage(dateError);
+        }
+
         #endregion
 
     }
