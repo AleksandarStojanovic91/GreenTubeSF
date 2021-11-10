@@ -1,9 +1,11 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Support.Extensions;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.PageObjects;
 using System;
+using System.Configuration;
 using System.Threading;
 
 namespace GreenTubeSF.PageObjects
@@ -99,6 +101,10 @@ namespace GreenTubeSF.PageObjects
             return (DateTime.UtcNow - Jan1st1970).TotalMilliseconds.ToString().Replace(".","");
         }
 
-        //TODO add more wrapper methods, screenshots etc...
+        public void takeScreenshot(string fileName) 
+        {
+            Screenshot screen = this.driver.TakeScreenshot();
+            screen.SaveAsFile(ConfigurationManager.AppSettings.Get("TEST_RESULTS") + "Screenshots\\"+ fileName + "_" + DateTime.UtcNow.ToString("yyyy-MM-dd-mm-ss") + ".png",ScreenshotImageFormat.Png);
+        }
     }
 }

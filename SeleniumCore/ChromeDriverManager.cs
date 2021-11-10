@@ -6,9 +6,8 @@ namespace GreenTubeSLN.SeleniumCore
     {
         public override void CreateWebDriver()
         {
-            ChromeOptions options = new ChromeOptions();
-            options.AddArguments("start-maximized");
-            this.driver = new ChromeDriver(options);
+            this.driver = new ChromeDriver();
+            this.driver.Manage().Window.Maximize();
         }
     }
 }

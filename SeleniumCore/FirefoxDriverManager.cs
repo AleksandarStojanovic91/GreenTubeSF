@@ -6,9 +6,8 @@ namespace GreenTubeSLN.SeleniumCore
     {
         public override void CreateWebDriver()
         {
-            FirefoxOptions options = new FirefoxOptions();
-            options.AddArguments("start-maximized");
-            this.driver = new FirefoxDriver(options);
+            this.driver = new FirefoxDriver();
+            this.driver.Manage().Window.Maximize();
         }
     }
 }

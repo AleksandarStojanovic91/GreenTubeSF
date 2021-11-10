@@ -78,6 +78,7 @@ namespace GreenTubeSF.Steps
         {
             loggedInPage.CloseWheel();
             loggedInPage.VerifyUsername("AlexBg91");
+            loggedInPage.takeScreenshot("Profile");
         }
 
         [Then(@"I should see username error message '(.*)'")]

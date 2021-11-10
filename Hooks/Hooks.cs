@@ -5,6 +5,7 @@ using BoDi;
 using GreenTubeSLN.SeleniumCore;
 using OpenQA.Selenium;
 using System;
+using System.Configuration;
 using TechTalk.SpecFlow;
 
 namespace GreenTubeSF.Hooks
@@ -27,7 +28,8 @@ namespace GreenTubeSF.Hooks
         [BeforeTestRun]
         public static void BeforeTestRun()
         {
-            _extentHtmlReporter = new ExtentHtmlReporter(@"C:\Users\aleks\OneDrive\Desktop\VS\GreenTubeSF\TestResults\");
+            string path = ConfigurationManager.AppSettings.Get("TEST_RESULTS");
+            _extentHtmlReporter = new ExtentHtmlReporter(@path);
             _extentReports = new ExtentReports();
             _extentReports.AttachReporter(_extentHtmlReporter);
         }
@@ -121,7 +123,7 @@ namespace GreenTubeSF.Hooks
         [BeforeScenario]
         public void BeforeScenario()
         {
-            driverManager = DriverManagerFactory.GetDriverManager("Chrome");
+            driverManager = DriverManagerFactory.GetDriverManager(ConfigurationManager.AppSettings.Get("BROWSER"));
             driver = driverManager.GetWebDriver();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
 
