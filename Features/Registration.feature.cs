@@ -79,8 +79,6 @@ namespace GreenTubeSF.Features
         [NUnit.Framework.DescriptionAttribute("Register at gametwist.com")]
         [NUnit.Framework.CategoryAttribute("Registration")]
         [NUnit.Framework.CategoryAttribute("HappyPath")]
-        [NUnit.Framework.CategoryAttribute("Chrome")]
-        [NUnit.Framework.CategoryAttribute("Firefox")]
         [NUnit.Framework.CategoryAttribute("Smoke")]
         [NUnit.Framework.CategoryAttribute("Regression")]
         [NUnit.Framework.TestCaseAttribute("test@email.com", "username", "TestPass123!", "20", "7", "1991", null)]
@@ -89,8 +87,6 @@ namespace GreenTubeSF.Features
             string[] @__tags = new string[] {
                     "Registration",
                     "HappyPath",
-                    "Chrome",
-                    "Firefox",
                     "Smoke",
                     "Regression"};
             if ((exampleTags != null))
@@ -171,8 +167,6 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.DescriptionAttribute("Register at gametwist.com through register now link")]
         [NUnit.Framework.CategoryAttribute("Registration")]
         [NUnit.Framework.CategoryAttribute("HappyPath")]
-        [NUnit.Framework.CategoryAttribute("Chrome")]
-        [NUnit.Framework.CategoryAttribute("Firefox")]
         [NUnit.Framework.CategoryAttribute("Regression")]
         [NUnit.Framework.TestCaseAttribute("test@email.com", "username", "TestPass123!", "20", "7", "1991", null)]
         public virtual void RegisterAtGametwist_ComThroughRegisterNowLink(string email, string username, string password, string day, string month, string year, string[] exampleTags)
@@ -180,8 +174,6 @@ this.ScenarioInitialize(scenarioInfo);
             string[] @__tags = new string[] {
                     "Registration",
                     "HappyPath",
-                    "Chrome",
-                    "Firefox",
                     "Regression"};
             if ((exampleTags != null))
             {
@@ -264,8 +256,6 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.DescriptionAttribute("Verify registration form labels and tooltips")]
         [NUnit.Framework.CategoryAttribute("Registration")]
         [NUnit.Framework.CategoryAttribute("Tooltips")]
-        [NUnit.Framework.CategoryAttribute("Chrome")]
-        [NUnit.Framework.CategoryAttribute("Firefox")]
         [NUnit.Framework.TestCaseAttribute("EN", "Please enter a valid e-mail address.", "E-mail", "Please enter a valid nickname.", "Nickname", "Your password must be at least 8 characters long.", "At least one number or a special character required.", "Password", "Date of birth", "I agree with the GTC and data protection guidelines.", "30,000 Twist Welcome Bonus & 15 Free Spins for Book of Ra™ deluxe", "BEGIN ADVENTURE", new string[] {
                 "Smoke"}, Category="Smoke")]
         [NUnit.Framework.TestCaseAttribute("FR", "Merci d\'indiquer une adresse e-mail valide.", "E-mail", "Merci d\'indiquer un pseudo valide.", "Pseudo", "Ton mot de passe doit compter au moins 8 caractères.", "Utiliser au moins un chiffre ou un caractère spécial.", "Mot de passe", "Date de naissance", "J\'accepte les conditions générales d\'utilisation et les directives sur la protect" +
@@ -275,9 +265,7 @@ this.ScenarioInitialize(scenarioInfo);
         {
             string[] @__tags = new string[] {
                     "Registration",
-                    "Tooltips",
-                    "Chrome",
-                    "Firefox"};
+                    "Tooltips"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -377,8 +365,6 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.DescriptionAttribute("Verify field error messages and transaltion")]
         [NUnit.Framework.CategoryAttribute("Registration")]
         [NUnit.Framework.CategoryAttribute("Negative")]
-        [NUnit.Framework.CategoryAttribute("Chrome")]
-        [NUnit.Framework.CategoryAttribute("Firefox")]
         [NUnit.Framework.TestCaseAttribute("EN", "E-mail address required", "Nickname required", "Password required", "Please select day", "Please select month", "Please select year", "The security check is a required field. Please enter the code.", "You must agree to our General Terms & Conditions to continue.", new string[] {
                 "Smoke"}, Category="Smoke")]
         [NUnit.Framework.TestCaseAttribute("FR", "Adresse e-mail manquante", "Pseudo manquant", "Mot de passe manquant", "Merci de choisir un jour", "Merci de choisir un mois", "Merci de choisir une année", "Le processus de sécurité est un champ obligatoire. Merci de saisir le code.", "Avant de poursuivre, tu dois accepter nos conditions générales d\'utilisation.", new string[] {
@@ -387,9 +373,7 @@ this.ScenarioInitialize(scenarioInfo);
         {
             string[] @__tags = new string[] {
                     "Registration",
-                    "Negative",
-                    "Chrome",
-                    "Firefox"};
+                    "Negative"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -470,8 +454,6 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.DescriptionAttribute("Try to Register at gametwist.com with invalid values")]
         [NUnit.Framework.CategoryAttribute("Registration")]
         [NUnit.Framework.CategoryAttribute("Negative")]
-        [NUnit.Framework.CategoryAttribute("Chrome")]
-        [NUnit.Framework.CategoryAttribute("Firefox")]
         [NUnit.Framework.CategoryAttribute("Regression")]
         [NUnit.Framework.TestCaseAttribute("EN", "invalidEmail", "usernameTest", "TestPass123!", "1", "2", "1991", "Please enter a valid e-mail address.", "null", "null", "null", null)]
         [NUnit.Framework.TestCaseAttribute("EN", "2char@username.com", "us", "TestPass123!", "1", "2", "1991", "null", "Your nickname must be between 3 and 13 characters long.", "null", "null", null)]
@@ -492,8 +474,6 @@ this.ScenarioInitialize(scenarioInfo);
             string[] @__tags = new string[] {
                     "Registration",
                     "Negative",
-                    "Chrome",
-                    "Firefox",
                     "Regression"};
             if ((exampleTags != null))
             {
@@ -581,8 +561,6 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.DescriptionAttribute("Try to Register already registered user")]
         [NUnit.Framework.CategoryAttribute("Registration")]
         [NUnit.Framework.CategoryAttribute("Negative")]
-        [NUnit.Framework.CategoryAttribute("Chrome")]
-        [NUnit.Framework.CategoryAttribute("Firefox")]
         [NUnit.Framework.CategoryAttribute("Regression")]
         [NUnit.Framework.TestCaseAttribute("EN", "registered@mail.com", "usernameTest", "TestPass123!", "1", "2", "1991", "The e-mail address you entered is already in use.", null)]
         public virtual void TryToRegisterAlreadyRegisteredUser(string language, string email, string username, string password, string day, string month, string year, string emailErrorMessage, string[] exampleTags)
@@ -590,8 +568,6 @@ this.ScenarioInitialize(scenarioInfo);
             string[] @__tags = new string[] {
                     "Registration",
                     "Negative",
-                    "Chrome",
-                    "Firefox",
                     "Regression"};
             if ((exampleTags != null))
             {
@@ -641,7 +617,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And(string.Format("I enter email \'{0}\'", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 145
- testRunner.And(string.Format("I enter username \'{0}\'", username), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I enter registration username \'{0}\'", username), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 146
  testRunner.And(string.Format("I enter registration password \'{0}\'", password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

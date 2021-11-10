@@ -3,7 +3,7 @@
 	I also should be able to register using other languages and in case of invalid field values I should see appropriate error messages 
 	with propper translation. When clicking input fields i should also see tooltips, with propper translation as well.
 
-@Registration @HappyPath @Chrome @Firefox @Smoke @Regression
+@Registration @HappyPath @Smoke @Regression
 Scenario Outline: Register at gametwist.com
 	As a user I should be able to fill out the registration form and successfully register.
 	Given I am on the gametwist home page
@@ -23,7 +23,7 @@ Scenario Outline: Register at gametwist.com
 	| email		      | username | password     | day | month | year |
 	| test@email.com  | username | TestPass123! | 20  | 7     | 1991 |
 
-@Registration @HappyPath @Chrome @Firefox @Regression
+@Registration @HappyPath @Regression
 Scenario Outline: Register at gametwist.com through register now link
 	As a user I should be able to fill out the registration form and successfully register.
 	Given I am on the gametwist home page
@@ -44,7 +44,7 @@ Scenario Outline: Register at gametwist.com through register now link
 	| email		      | username | password     | day | month | year |
 	| test@email.com  | username | TestPass123! | 20  | 7     | 1991 |
 
-@Registration @Tooltips @Chrome @Firefox
+@Registration @Tooltips
 Scenario Outline: Verify registration form labels and tooltips
 	As a user I want to see element tooltips and labels displayed correctly and translated accordingly.
 	Given I am on the gametwist home page
@@ -76,7 +76,7 @@ Scenario Outline: Verify registration form labels and tooltips
 	| FR       | Merci d'indiquer une adresse e-mail valide. | E-mail     | Merci d'indiquer un pseudo valide. | Pseudo        | Ton mot de passe doit compter au moins 8 caractères. | Utiliser au moins un chiffre ou un caractère spécial. | Mot de passe  | Date de naissance | J'accepte les conditions générales d'utilisation et les directives sur la protection des données. | Bonus de bienvenue : 30 000 Twists & 15 tours gratuits pour Book of Ra™ deluxe | COMMENCER L'AVENTURE | 
 	# TODO add more languages
 
-@Registration @Negative @Chrome @Firefox
+@Registration @Negative
 Scenario Outline: Verify field error messages and transaltion
 	As a user I want to be shown error messages on invalid or on no input.
 	Given I am on the gametwist home page
@@ -103,7 +103,7 @@ Scenario Outline: Verify field error messages and transaltion
 	| FR       | Adresse e-mail manquante | Pseudo manquant      | Mot de passe manquant | Merci de choisir un jour | Merci de choisir un mois | Merci de choisir une année | Le processus de sécurité est un champ obligatoire. Merci de saisir le code. | Avant de poursuivre, tu dois accepter nos conditions générales d'utilisation. |
 #TODO add more languages
 
-@Registration @Negative @Chrome @Firefox @Regression
+@Registration @Negative @Regression
 Scenario Outline: Try to Register at gametwist.com with invalid values
 	As a user I should be able to fill out the registration form with invalid data 
 	and on sumbit I should see appropriate error messages
@@ -135,14 +135,14 @@ Scenario Outline: Try to Register at gametwist.com with invalid values
 	| EN       | mail@mail.com            | usernameTest   | qwe123@      | 1   | 2     | 1991 | null                                              | null                                                                  | Your password must be at least 8 characters long.                                  | null                                                                |
 	| EN       | mail@mail.com            | usernameTest   | TestPass123! | 1   | 12    | 2003 | null                                              | null                                                                  | null                                                                               | The minimum legal age required for using our offerings is 18 years. |
 
-@Registration @Negative @Chrome @Firefox @Regression
+@Registration @Negative @Regression
 Scenario Outline: Try to Register already registered user
 	As a user I shouldnt be able to register using already registered email
 	Given I am on the gametwist home page
 	When I click register button
 	And I close cookie popup
 	And I enter email '<email>'
-	And I enter username '<username>'
+	And I enter registration username '<username>'
 	And I enter registration password '<password>'
 	And I select day '<day>' month '<month>' and '<year>' of birth
 	And I click agree with GTC
@@ -153,4 +153,3 @@ Scenario Outline: Try to Register already registered user
 	Examples: 
 	| language | email                    | username       | password     | day | month | year | emailErrorMessage                                 |
 	| EN       | registered@mail.com      | usernameTest   | TestPass123! | 1   | 2     | 1991 | The e-mail address you entered is already in use. |
-
