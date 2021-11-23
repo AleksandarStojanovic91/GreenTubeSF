@@ -131,7 +131,7 @@ namespace GreenTubeSLN.PageObjects
             driver.SwitchTo().DefaultContent();
             try
             {
-                driver.SwitchTo().Frame(driver.FindElement(By.CssSelector("[title='recaptcha challenge']")));
+                driver.SwitchTo().Frame(driver.FindElement(By.XPath("//*[contains(@title,'recaptcha challenge')]")));
             }
             catch(NoSuchElementException e) 
             {
